@@ -37,3 +37,24 @@ Instructions:
     		{
        		   return $this->deck;
     		}
+
+- [X] 7. In the constructor do the following: 
+	- [X] Instantiate the Player class twice, insert it into the player property and a dealer property.
+		- $this -> player = new Player($deck);
+        	- $this -> dealer = new Player($deck);
+
+	- [X] Create a new deck object (code has already been written for you!).
+		- $deck = new Deck();
+
+	- [X] Shuffle the cards with shuffle method on deck.
+		- $deck->shuffle();
+		- foreach($deck->getCards() AS $card)
+        		{
+            			echo $card->getUnicodeCharacter(true);
+            			echo '<br>';
+        		}
+
+
+
+
+
