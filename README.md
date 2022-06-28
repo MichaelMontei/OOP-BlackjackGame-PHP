@@ -61,7 +61,8 @@ private Deck $deck;
 
 - [X] 6. Add the following public methods: getPlayer (returns the player object, getPlayer (returns the player object) and getDeck (returns the deck object)
 				
-	```php
+```php
+<?php
 /**
 * @return Player
 */
@@ -93,6 +94,7 @@ public function getDeck(): Deck
 	- [X] Shuffle the cards with shuffle method on deck.
 		
 ```php
+<?php
 public function __construct()
 {
   $this->player = new Player();
@@ -107,6 +109,7 @@ public function __construct()
 	- [X] Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
 
 ```php
+<?php
 public function __construct(Deck $deck)
 {
 $this->lost = false;
@@ -121,6 +124,7 @@ $this->dealer = new Player($this->deck);
 	- [X] Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
 
 ```php
+<?php
      public function __construct(Deck $deck)
      {
         $this->lost = false;
@@ -129,7 +133,7 @@ $this->dealer = new Player($this->deck);
             $this->cards[] = $deck->drawCard();
         }
      }
-     ```
+```
 
 - [X] 9. Go back to the Player class and add the following logic in your empty methods:
 		- [X]  getScore loops over all the cards and returns the total value of that player.
