@@ -138,6 +138,8 @@ $this->dealer = new Player($this->deck);
 - [X] 9. Go back to the Player class and add the following logic in your empty methods:
 		- [X]  getScore loops over all the cards and returns the total value of that player.
 
+```php
+<?php
 	public function getScore(): int
     	{
         	//public method to getScore
@@ -156,9 +158,12 @@ $this->dealer = new Player($this->deck);
     	{
         	$this->lost =true;
     	}
+```
 
 	- [X] hit should add a card to the player. If this brings him above 21, set the lost property to true. To count his score use the method getScore you wrote earlier. This method should expect the $deck variable as an argument from outside, to draw the card.
-		
+
+```php
+<?php		
 	public function hit(Deck $deck) : void 
 	{
   		$this->cards[] += $deck->drawCard();
@@ -172,6 +177,7 @@ $this->dealer = new Player($this->deck);
 	public function surrender() : bool {
   		return $this->lost = true;
 	}
+```
 
 #### Dive a little deeper to 12 meters and create the index.php file
 - Create an `index.php` file with the following code:
