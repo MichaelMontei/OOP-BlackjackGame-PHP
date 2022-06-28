@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class Dealer extends Player
 {
-    public function hit($deck)
+    public function hit($deck): void
     {
         if ($this->getScore()<15){
             do{

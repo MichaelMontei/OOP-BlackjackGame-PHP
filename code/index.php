@@ -1,8 +1,15 @@
 <?php
 declare(strict_types=1);
 
+require 'code/Blackjack.php';
+require 'code/Card.php';
+require 'code/Deck.php';
+require 'code/Player.php';
+require 'code/Suit.php';
 
-
+session_start();
+$blackjack = new Blackjack();
+$_SESSION['blackjack'] = $blackjack;
 
 
 
