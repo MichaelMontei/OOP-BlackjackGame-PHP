@@ -3,104 +3,132 @@
 Instructions:
 
 - [X] 1. Create a class called Player in the file Player.php.
-	<?php
+```php
+<?php
 
-	declare(strict_types=1);
+declare(strict_types=1);
 
-	class Player
-	{
+class Player
+{
 
-	} 
+}
+```
 	
 - [X] 2. Add 2 private properties: cards (array) and lost (bool, default = false)
-	private array $cards;
-	private bool $lost;
+```php
+private array $cards;
+private bool $lost;
+```
 
 - [X] 3. Add a couple of empty public methods to this class: (hit, surrender, getScore and hasLost)
-	public function hit() {
+	```php
+public function hit() {
 
-	}
+}
     
-	public function surrender() {
+public function surrender() {
 
-	}
+}
     
-	public function getScore() {
+public function getScore() {
         
-	}
+}
     
-	public function hasLost() {
+public function hasLost() {
         
-	}
+}
+```
 
 - [X] 4. Create a class called Blackjack in the file Blackjack.php
-	<?php
+```php
+<?php
 
-	declare(strict_types=1);
+declare(strict_types=1);
 
-	class Blackjack
-	{
+class Blackjack
+{
 
-	}
+}
+```
 	
 - [X] 5. Add 3 private properties: player (Player), dealer (Player for now) and deck (Deck)
-	private Player $player;
-	private Player $dealer;
-	private Deck $deck;
-
+```php
+private Player $player;
+private Player $dealer;
+private Deck $deck;
+```
 
 - [X] 6. Add the following public methods: getPlayer (returns the player object, getPlayer (returns the player object) and getDeck (returns the deck object)
 				
-	/**
-	* @return Player
-	*/
-	public function getPlayer(): Player
-	{
-    		return $this->player;
-	}
-
-	/**
-	* @return Player
-	*/
-	public function getDealer(): Player
-	{
-    		return $this->dealer;
-	}
-
-	/**
-	* @return Deck
-	*/
-	public function getDeck(): Deck
-	{
-    		return $this->deck;
-	
+	```php
+/**
+* @return Player
+*/
+public function getPlayer(): Player
+{
+    return $this->player;
 }
+
+/**
+* @return Player
+*/
+public function getDealer(): Player
+{
+    return $this->dealer;
+}
+
+/**
+* @return Deck
+*/
+public function getDeck(): Deck
+{
+    return $this->deck;
+}
+```
+
 - [X] 7. In the constructor do the following: 
 	- [X] Instantiate the Player class twice, insert it into the player property and a dealer property.
 	- [X] Create a new deck object (code has already been written for you!).
 	- [X] Shuffle the cards with shuffle method on deck.
 		
-	public function __construct()
-	{
-  		$this->player = new Player();
-  		$this->dealer = new Player();
-  		$this->deck = new Deck();
-  		$this->deck->shuffle();
-	}
+```php
+public function __construct()
+{
+  $this->player = new Player();
+  $this->dealer = new Player();
+  $this->deck = new Deck();
+  $this->deck->shuffle();
+}
+```
 		
 - [X] 8. In the constructor of the Player class:
 	- [X] Make it expect the Deck object as a parameter.
-	- [X] Pass this Deck from the Blackjack constructor
 	- [X] Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
 
-	public function __construct(Deck $deck)
-	{
-  		 $this->lost = false;
-  		 $this->cards = [];
-   	for ($i=0; $i<2; $i++) {
-      		 $this->cards[] = $deck->drawCard();
-      	}
-	}
+```php
+public function __construct(Deck $deck)
+{
+$this->lost = false;
+$this->cards = [];
+}
+```
+  	- [X] Pass this Deck from the Blackjack constructor
+```php
+$this->player = new Player($this->deck);
+$this->dealer = new Player($this->deck);
+```
+	- [X] Now draw 2 cards for the player. You have to use an existing method for this from the Deck class.
+
+```php
+     public function __construct(Deck $deck)
+     {
+        $this->lost = false;
+        $this->cards = [];
+        for ($i=0; $i<2; $i++) {
+            $this->cards[] = $deck->drawCard();
+        }
+     }
+     ```
 
 - [X] 9. Go back to the Player class and add the following logic in your empty methods:
 		- [X]  getScore loops over all the cards and returns the total value of that player.
