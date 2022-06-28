@@ -21,7 +21,8 @@ private bool $lost;
 ```
 
 - [X] 3. Add a couple of empty public methods to this class: (hit, surrender, getScore and hasLost)
-	```php
+```php
+<?php
 public function hit() {
 
 }
