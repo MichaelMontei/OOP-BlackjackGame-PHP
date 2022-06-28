@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-require 'Player.php';
 require 'Suit.php';
 require 'Card.php';
 require 'Deck.php';
@@ -19,12 +18,7 @@ class Blackjack
         $deck = new Deck();
         $deck->shuffle();
 
-        foreach($deck->getCards() AS $card)
-        {
-            echo $card->getUnicodeCharacter(true);
-            echo '<br>';
-        }
-
+        $this->deck =$deck;
         $this -> player = new Player($deck);
         $this -> dealer = new Player($deck);
 
@@ -33,22 +27,37 @@ class Blackjack
 //Add the following public methods to the class:
 
     //getPlayer: returns the player object
-    public function getPlayer()
+    public function getPlayer(): Player
     {
         return $this->player;
     }
 
     //getDealer: returns the dealer object
-    public function getDealer()
+    public function getDealer(): Player
     {
         return $this->dealer;
     }
 
     //getDeck: returns the deck object
-    public function getDeck ()
+    public function getDeck (): Deck
     {
         return $this->deck;
     }
 
+    public function setPlayer($player): void
+    {
+        $this->player = $player;
+    }
 
+
+    public function setDealer($dealer): void
+    {
+        $this->dealer = $dealer;
+    }
+
+
+    public function setDeck($deck): void
+    {
+        $this->deck = $deck;
+    }
 }
